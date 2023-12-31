@@ -18,6 +18,10 @@ mongoose
     console.error("Error connecting to MongoDB:", error.message);
   });
 
+  app.get("/", (req, res) => {
+    res.send("Express on Vercel");
+  });
+
 app.post("/product", async (req, res) => {
   console.log("Result", req.body);
 
@@ -33,9 +37,7 @@ app.post("/product", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("Express on Vercel");
-});
+
 
 app.get("/api", (req, res) => {
   res.setHeader("Content-Type", "text/html");
