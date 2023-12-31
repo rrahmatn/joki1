@@ -60,7 +60,7 @@ mongoose
       try {
         const data = await Product.findByIdAndDelete(id);
         res.json({
-          status: "Deleted the product ${data.pname} from database",
+          status: `Deleted the product ${data.pname} from database`,
         });
       } catch (error) {
         res.json(error.message);
