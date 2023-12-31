@@ -33,6 +33,10 @@ mongoose
       }
     });
 
+    app.get("", async (req, res) => {
+      return res.send("hello")
+    });
+
     app.get("/product", async (req, res) => {
       try {
         let data = await Product.find();
