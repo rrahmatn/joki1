@@ -11,13 +11,6 @@ app.use(cors({
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
 }));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-  next();
-});
-
 
 mongoose.set('strictQuery', true);
 mongoose.connect("mongodb+srv://david:apaantuh11@pam.spi9mzl.mongodb.net/flutter", { useNewUrlParser: true, useUnifiedTopology: true })
