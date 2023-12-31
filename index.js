@@ -33,8 +33,10 @@ mongoose
       }
     });
 
-    app.get("", async (req, res) => {
-      return res.send("hello")
+    app.get('/api', (req, res) => {
+      res.setHeader('Content-Type', 'text/html');
+      res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+      res.end(`Hello! Go to item: <p>hello</p>`);
     });
 
     app.get("/product", async (req, res) => {
@@ -78,3 +80,5 @@ mongoose
 app.listen(3000, () => {
   console.log("Connected to server at 3000");
 });
+
+module.exports = app;
